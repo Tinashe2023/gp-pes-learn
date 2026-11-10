@@ -66,8 +66,15 @@ def force_force(Da, Ja, Db, Jb, lengthscale, variance):
     """Cov(F^a_{m,k}, F^b_{n,l}) = +d2K_EE/dR^a_{m,k} dR^b_{n,l}.
     Shape (n_a, 3, n_b, 3)."""
     K, diff = _rbf(Da, Db, lengthscale, variance)
-    d = Da.shape[1]
-    outer = diff[:, :, :, None] * diff[:, :, None, :]
-    hess = K[:, :, None, None] * (np.eye(d)[None, None] / lengthscale ** 2
-                                   - outer / lengthscale ** 4)   # d2k/dD1dD2
-    return np.einsum("pqfg,pmkf,qnlg->mknl", hess, Ja, Jb)
+    
+    # Term 1: Identity part of the Hessian (split into two einsums for speed)
+    K_Ja = np.einsum("pq,pmkf->qmkf", K / lengthscale**2, Ja)
+    term1 = np.einsum("qmkf,qnlf->mknl", K_Ja, Jb)
+    
+    # Term 2: Outer product part of the Hessian
+    # diff is u = Da_p - Db_q (shape p, q, f)
+    Ja_u = np.einsum("pmkf,pqf->pqmk", Ja, diff)
+    Jb_u = np.einsum("qnlf,pqf->pqnl", Jb, diff)
+    term2 = np.einsum("pq,pqmk,pqnl->mknl", K / lengthscale**4, Ja_u, Jb_u)
+    
+    return term1 - term2
