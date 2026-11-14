@@ -1,0 +1,13 @@
+\begin{table}[htbp]
+\centering
+\caption{Effect of the analytical SOAP Jacobian self-term correction on translational invariance, net-force conservation, and test accuracy on rMD17 ethanol.}
+\label{tab:self_term_ablation}
+\begin{tabular}{lcccc}
+\toprule
+Jacobian Variant & Trans. Sum Error & Net Force ||ΣF|| (kcal/mol/Å) & Energy RMSE (kcal/mol) & Force RMSE (kcal/mol/Å) \\
+\midrule
+Raw DScribe (Uncorrected) & 2.94e-01 & 2.48e+01 & 4.269 & 23.633 \\
+Corrected Jacobian (Ours) & 9.58e-16 & 6.24e-11 & 3.955 & 20.504 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,5 @@
+Configuration,Final NLML,Lengthscale (l),Variance (v),Noise n_E,Noise n_F,Val E-RMSE,Val F-RMSE
+Fixed Baseline (Frozen),—,1.500,1.000,0.0100,0.0500,4.980,29.418
+NLML Opt. (Init 1),1297.46,1.201,0.010,1.0270,6.5509,5.126,29.530
+NLML Opt. (Init 2),1297.40,0.507,0.011,1.0090,6.5664,—,—
+NLML Opt. (Init 3),1297.46,1.422,0.010,1.0241,6.5695,—,—

@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{Multi-seed active learning performance (mean ± 1σ across 5 seeds at N=20) on the ethanol C–O structural gap.}
+\label{tab:acquisition_comparison}
+\begin{tabular}{lcccc}
+\toprule
+Acquisition Strategy & Gap Force RMSE (kcal/mol/Å) & Gap Energy RMSE (kcal/mol) & Cumulative Info Gain (nats) & Runtime / Run (s) \\
+\midrule
+Random Selection & 30.755 $\pm$ 0.501 & 4.737 $\pm$ 0.274 & 17.99 $\pm$ 0.77 & 81.1 \\
+Max-Variance (Trace) & 31.062 $\pm$ 0.165 & 4.697 $\pm$ 0.226 & 23.39 $\pm$ 0.44 & 79.3 \\
+Committee Disagreement (QBC) & 31.151 $\pm$ 0.488 & 4.698 $\pm$ 0.272 & 21.20 $\pm$ 0.79 & 215.7 \\
+D-Optimality (Unweighted) & 30.711 $\pm$ 0.134 & 5.014 $\pm$ 0.115 & 21.50 $\pm$ 0.33 & 80.3 \\
+Info-Gain (Log-Det MI, Ours) & 31.067 $\pm$ 0.321 & 4.719 $\pm$ 0.268 & 23.42 $\pm$ 0.50 & 79.7 \\
+\bottomrule
+\end{tabular}
+\end{table}

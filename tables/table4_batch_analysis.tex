@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Greedy submodular batch active learning performance across batch sizes B ∈ {1, 5, 10, 25} at a fixed budget of N=30 configurations (3 seeds).}
+\label{tab:batch_analysis}
+\begin{tabular}{lcccc}
+\toprule
+Batch Size (B) & Final Gap F-RMSE (kcal/mol/Å) & Final Gap E-RMSE (kcal/mol) & Intra-Batch SOAP Diversity & Total Wall Time (s) \\
+\midrule
+B = 1 & 28.749 $\pm$ 0.052 & 5.046 $\pm$ 0.088 & — & 184.9 $\pm$ 11.4 \\
+B = 5 & 28.698 $\pm$ 0.089 & 4.930 $\pm$ 0.140 & 0.251 $\pm$ 0.007 & 119.7 $\pm$ 10.5 \\
+B = 10 & 28.580 $\pm$ 0.095 & 4.945 $\pm$ 0.048 & 0.237 $\pm$ 0.008 & 118.2 $\pm$ 2.2 \\
+B = 25 & 28.470 $\pm$ 0.175 & 4.831 $\pm$ 0.138 & 0.226 $\pm$ 0.003 & 94.4 $\pm$ 0.4 \\
+\bottomrule
+\end{tabular}
+\end{table}

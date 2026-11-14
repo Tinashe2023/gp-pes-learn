@@ -1,0 +1,6 @@
+Acquisition Strategy,Gap Force RMSE (kcal/mol/Å),Gap Energy RMSE (kcal/mol),Cumulative Info Gain (nats),Runtime / Run (s)
+Random Selection,30.755 ± 0.501,4.737 ± 0.274,17.99 ± 0.77,81.1
+Max-Variance (Trace),31.062 ± 0.165,4.697 ± 0.226,23.39 ± 0.44,79.3
+Committee Disagreement (QBC),31.151 ± 0.488,4.698 ± 0.272,21.20 ± 0.79,215.7
+D-Optimality (Unweighted),30.711 ± 0.134,5.014 ± 0.115,21.50 ± 0.33,80.3
+"Info-Gain (Log-Det MI, Ours)",31.067 ± 0.321,4.719 ± 0.268,23.42 ± 0.50,79.7
