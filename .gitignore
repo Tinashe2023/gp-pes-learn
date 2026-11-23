@@ -18,3 +18,7 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+/paper/
+/theory/
+/HANDOFF_gp-pes-active-learning.md
+/Notes.md
