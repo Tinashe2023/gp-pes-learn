@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software or benchmark suite, please cite it as below."
+title: "Energy–Force Gaussian-Process Active Learning via Information-Gain Maximization for Potential Energy Surfaces"
+version: 1.0.0
+date-released: 2026-11-24
+authors:
+  - family-names: "Hando"
+    given-names: "Tinashe"
+    affiliation: "Department of Electronics and Communication Engineering, Lovely Professional University"
+  - family-names: "Thakur"
+    given-names: "Vishal"
+    affiliation: "Department of Physics, Lovely Professional University"
+keywords:
+  - "Gaussian processes"
+  - "active learning"
+  - "machine-learning interatomic potentials"
+  - "potential energy surfaces"
+  - "SOAP descriptors"
+  - "mutual information"
+license: MIT
