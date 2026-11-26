@@ -288,7 +288,7 @@ def plot_scaling(scaling_records):
     ax.plot(N_vals, t_chol, "^--", label="Cholesky Factorization O(N³)")
     ax.set_xlabel("Number of Training Configurations (N)")
     ax.set_ylabel("Wall-Clock Runtime (seconds)")
-    ax.set_title("Tier C.13: Component Runtime Scaling")
+    ax.set_title("(a) Component Runtime Scaling")
     ax.grid(True, alpha=0.4)
     ax.legend(fontsize=8.5)
 
@@ -296,7 +296,7 @@ def plot_scaling(scaling_records):
     ax.plot(N_vals, mem_mb, "s-", color="C3", linewidth=2)
     ax.set_xlabel("Number of Training Configurations (N)")
     ax.set_ylabel("Peak Traced Memory (MB)")
-    ax.set_title("Tier C.13: Peak Memory Footprint")
+    ax.set_title("(b) Peak Memory Footprint")
     ax.grid(True, alpha=0.4)
 
     plt.tight_layout()

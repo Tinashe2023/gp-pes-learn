@@ -184,10 +184,10 @@ def plot_c14_summary(all_results, n_init=5, n_steps=16):
     steps = np.arange(n_init, n_init + n_steps)
     fig, axes = plt.subplots(2, 2, figsize=(13, 9))
     panels = [
-        ("ethanol_random", "Ethanol: Random Split (Interpolation)", axes[0, 0]),
-        ("ethanol_contiguous", "Ethanol: Contiguous Trajectory Split", axes[0, 1]),
-        ("ethanol_structural", "Ethanol: Structural C-O Gap Split", axes[1, 0]),
-        ("malonaldehyde_structural", "Malonaldehyde: Structural O-H Gap Split", axes[1, 1]),
+        ("ethanol_random", "(a) Ethanol: Random Split (Interpolation)", axes[0, 0]),
+        ("ethanol_contiguous", "(b) Ethanol: Contiguous Trajectory Split", axes[0, 1]),
+        ("ethanol_structural", "(c) Ethanol: Structural C-O Gap Split", axes[1, 0]),
+        ("malonaldehyde_structural", "(d) Malonaldehyde: Structural O-H Gap Split", axes[1, 1]),
     ]
     styles = {
         "random": ("gray", "o", "--", "Random Sampling"),
@@ -210,7 +210,6 @@ def plot_c14_summary(all_results, n_init=5, n_steps=16):
         if key == "ethanol_random":
             ax.legend(fontsize=8.5)
 
-    plt.suptitle("Tier C.14: Multi-Split & Cross-Molecule Robustness (Mean ± 1σ)", fontsize=12)
     plt.tight_layout()
     plt.savefig("figures/tier_c14_multi_split_and_molecule.png", dpi=300)
     print("\nSaved Tier C.14 robustness plot to figures/tier_c14_multi_split_and_molecule.png")

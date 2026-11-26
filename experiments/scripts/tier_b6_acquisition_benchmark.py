@@ -188,7 +188,8 @@ def plot_tier_b7_curves(results, n_init, n_steps):
         ("cum_info_gain", "Cumulative Information Gain (nats)", axes[1, 1]),
     ]
 
-    for metric_key, ylabel, ax in metrics_info:
+    panel_tags = ["(a)", "(b)", "(c)", "(d)"]
+    for (metric_key, ylabel, ax), tag in zip(metrics_info, panel_tags):
         for strat, (color, marker, ls, label) in style_map.items():
             runs = results.get(strat, [])
             if not runs:
@@ -200,13 +201,13 @@ def plot_tier_b7_curves(results, n_init, n_steps):
             ax.plot(steps, mean_curve, marker=marker, linestyle=ls, color=color, label=label, markersize=5)
             ax.fill_between(steps, mean_curve - std_curve, mean_curve + std_curve, color=color, alpha=0.15)
 
+        ax.set_title(f"{tag} {ylabel.split(' (')[0]}", fontsize=10.5)
         ax.set_xlabel("Training Set Size (N)")
         ax.set_ylabel(ylabel)
         ax.grid(True, alpha=0.4)
         if metric_key == "force_rmse":
             ax.legend(fontsize=8.5)
 
-    plt.suptitle("Tier B.6 & B.7: Multi-Seed Active Learning Comparison on Structural Gap (Mean ± 1σ)", fontsize=12)
     plt.tight_layout()
     plt.savefig("figures/tier_b6_b7_learning_curves.png", dpi=300)
     print("\nSaved 4-panel learning curves to figures/tier_b6_b7_learning_curves.png")

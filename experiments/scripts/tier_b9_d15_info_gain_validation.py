@@ -267,7 +267,7 @@ def main():
     ax.plot(x_line, m * x_line + b, "r--", linewidth=1.5, label=f"Linear Fit (r = {r_mi:.2f})")
     ax.set_xlabel("Predicted Acquisition Score I(y_x; f | D_t) [nats]")
     ax.set_ylabel("Realized Global Pool Entropy Reduction [nats]")
-    ax.set_title("Tier B.9: Acquisition Score Validation")
+    ax.set_title("(a) Acquisition Score Validation")
     ax.grid(True, alpha=0.4)
     ax.legend()
 
@@ -279,7 +279,7 @@ def main():
     ax.plot(T_vals, log_env, "k--", label="Sublinear Envelope O(d_eff log T)")
     ax.set_xlabel("Active Learning Step (T)")
     ax.set_ylabel("Cumulative Information Gain γ_T [nats]")
-    ax.set_title("Tier D.15: Sublinear Information Gain Growth")
+    ax.set_title("(b) Sublinear Information Gain Growth")
     ax.grid(True, alpha=0.4)
     ax.legend()
 
@@ -292,7 +292,7 @@ def main():
     ax.plot(T_vals, theory_rate, "k:", linewidth=1.8, label="Theoretical Envelope O(γ_T / T)")
     ax.set_xlabel("Active Learning Step (T)")
     ax.set_ylabel("Posterior Predictive Trace Variance")
-    ax.set_title("Tier D.16: Posterior Variance Decay")
+    ax.set_title("(c) Posterior Variance Decay")
     ax.grid(True, alpha=0.4)
     ax.legend(fontsize=8)
 

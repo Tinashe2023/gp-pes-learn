@@ -165,7 +165,7 @@ def plot_batch_results(results, batch_sizes):
         ax.fill_between(N_vals, mean_f - std_f, mean_f + std_f, color=colors[B], alpha=0.15)
     ax.set_xlabel("Training Set Size (N)")
     ax.set_ylabel("Gap Force RMSE (kcal/mol/Å)")
-    ax.set_title("Accuracy vs. Query Budget")
+    ax.set_title("(a) Accuracy vs. Query Budget")
     ax.grid(True, alpha=0.4)
     ax.legend()
 
@@ -175,7 +175,7 @@ def plot_batch_results(results, batch_sizes):
     std_times = [np.std([r["wall_time_sec"] for r in results[str(B)]]) for B in batch_sizes]
     ax.bar([f"B={B}" for B in batch_sizes], mean_times, yerr=std_times, capsize=4, color=[colors[B] for B in batch_sizes], alpha=0.85)
     ax.set_ylabel("Total Wall-Clock Time (s)")
-    ax.set_title("Retraining & Acquisition Runtime")
+    ax.set_title("(b) Retraining & Acquisition Runtime")
     ax.grid(True, axis="y", alpha=0.4)
 
     # Panel 3: Intra-batch diversity (for B > 1)
@@ -185,10 +185,9 @@ def plot_batch_results(results, batch_sizes):
     std_div = [np.std([r["mean_batch_diversity"] for r in results[str(B)]]) for B in multi_B]
     ax.bar([f"B={B}" for B in multi_B], mean_div, yerr=std_div, capsize=4, color=[colors[B] for B in multi_B], alpha=0.85)
     ax.set_ylabel("Mean Pairwise SOAP Distance")
-    ax.set_title("Intra-Batch Structural Diversity")
+    ax.set_title("(c) Intra-Batch Structural Diversity")
     ax.grid(True, axis="y", alpha=0.4)
 
-    plt.suptitle("Tier B.8: Greedy Submodular Batch Active Learning Analysis (3 Seeds)", fontsize=12)
     plt.tight_layout()
     plt.savefig("figures/tier_b8_batch_analysis.png", dpi=300)
     print("\nSaved batch analysis plot to figures/tier_b8_batch_analysis.png")
